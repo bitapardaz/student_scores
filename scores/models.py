@@ -12,4 +12,3 @@ class StudentCourseScore(models.Model):
     course = models.ForeignKey(Course)
     score = models.IntegerField(default=100)
     valid_until = models.DateTimeField()
-    test_field = models.IntegerField(default=0)

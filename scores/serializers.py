@@ -27,15 +27,15 @@ class StudentCourseScoreSerializer(serializers.ModelSerializer):
         return obj.course.description
 
     def get_course_image(self,obj):
-        return obj.course.image
+        return obj.course.image.url
 
     student_first_name = serializers.SerializerMethodField()
     student_last_name = serializers.SerializerMethodField()
     course_title = serializers.SerializerMethodField()
     course_code = serializers.SerializerMethodField()
     course_description = serializers.SerializerMethodField()
-    #course_image = serializers.SerializerMethodField()
+    course_image = serializers.SerializerMethodField()
 
     class Meta:
         model = StudentCourseScore
-        fields = ('score', 'valid_until','student_first_name','student_last_name','course_title','course_code','course_description',)
+        fields = ('score', 'valid_until','student_first_name','student_last_name','course_title','course_code','course_description','course_image',)

@@ -82,12 +82,8 @@ WSGI_APPLICATION = 'student_scores.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'my_database',
-	'USER': 'my_database_user',
-	'PASSWORD': 'fedora25',
-	'HOST':'localhost',
-	'PORT': ''
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
 
@@ -111,5 +107,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = "/home/npdroid/Workspace/student_scores_storage"
 
 CORS_ORIGIN_ALLOW_ALL = True
