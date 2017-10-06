@@ -25,7 +25,7 @@ SECRET_KEY = '#qja$tp75ih!7s2dwa23fi0!fj=av$kcfk@@poi=yxe@-j%wi-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','138.197.191.1']
 
 
 # Application definition
@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'student_scores.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'my_database',
+	'USER': 'my_database_user',
+	'PASSWORD': 'fedora25',
+	'HOST':'localhost',
+	'PORT': ''
     }
 }
 
@@ -106,5 +110,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 CORS_ORIGIN_ALLOW_ALL = True
